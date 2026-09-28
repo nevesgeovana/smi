@@ -1,0 +1,32 @@
+[
+ {
+  "path": "iges/SMI-Fuselage.igs",
+  "bytes": 1250802,
+  "sha256": "c55496ae1ecacff5a6d2700cdad5d26202043edabcf807ff67f1c13d3e4dbc3f"
+ },
+ {
+  "path": "iges/SMI-L1-PN.igs",
+  "bytes": 893754,
+  "sha256": "df158deab84cabe966f02c3af98d0625f9ae745ef062c98d0887c5f7279e415e"
+ },
+ {
+  "path": "iges/SMI-L2-PN.igs",
+  "bytes": 476928,
+  "sha256": "4fd44e8dc912b373086aaebf42f4bc4fdd1c3fb31d368cadf687dc3caf55bdb3"
+ },
+ {
+  "path": "iges/SMI-L3-PN.igs",
+  "bytes": 573966,
+  "sha256": "87e3824d56c217e91f91adfbc4e43b1a1d469f44d2a429ae72765bdcbd2a6350"
+ },
+ {
+  "path": "iges/SMI-liftingsurfaces-nocap.igs",
+  "bytes": 193347,
+  "sha256": "cdf93b6590639f4ade831f03d0f603f88deb73c7a758f507876a3d3f89158f0c"
+ },
+ {
+  "path": "iges/SMI-WBVH.igs",
+  "bytes": 3747465,
+  "sha256": "0f427fa75e2be356e2343dfbb9ea1f19726e8d44389ee1bdbc0456fe6227a0ed"
+ }
+]

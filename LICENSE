@@ -1,4 +1,4 @@
-SMI v1.0.0: airframe geometry and surface meshes
+SMI v1.0.0: airframe geometry
 Copyright (c) 2026 Geovana Neves
 
 This work is licensed under the Creative Commons Attribution-NonCommercial 4.0
@@ -6,7 +6,7 @@ International License (CC BY-NC 4.0). To view a copy of this license, visit
 https://creativecommons.org/licenses/by-nc/4.0/ ; the legal code is at
 https://creativecommons.org/licenses/by-nc/4.0/legalcode .
 
-Attribution: "Geovana Neves, SMI v1.0.0: airframe geometry and surface meshes",
+Attribution: "Geovana Neves, SMI v1.0.0: airframe geometry",
 with a link to this repository or its Zenodo record. Commercial use requires the
 author's written permission.
 

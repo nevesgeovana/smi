@@ -1,58 +1,55 @@
-# SMI v1.0.0: airframe geometry and surface meshes
+# SMI v1.0.0: airframe geometry
 
 Copyright (c) 2026 Geovana Neves. Licensed under the Creative Commons
 Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0); see `LICENSE`.
 
-SMI is an interchangeable-component research configuration: a fuselage (B), a
-wing (W), a horizontal tail (H), a nacelle with its spinner (N, S) and a pylon
-(P), assembled in the combinations below to study propeller-airframe
-integration. This record holds the AIRFRAME ONLY. No propeller blade of any
+SMI is an interchangeable-component research configuration for the study of
+propeller-airframe integration: a common airframe (wing, body, vertical and
+horizontal tail) and three pylon-nacelle installations, L1, L2 and L3. This
+release holds the AIRFRAME ONLY, as IGES surfaces. No propeller blade of any
 kind is included; section "Adding a propeller" says how to install one.
 
 ## Contents
 
-> The geometry files are being prepared and will be added in a later commit;
-> this table describes the v1.0.0 release.
-
-| Folder | What it holds |
+| File | What it holds |
 |---|---|
-| `cad/SMI-L1/` | CATIA V5 parts of the level-1 geometry: lofting skeletons A and B, versions v0 to v6 (including the horizontal-tail incidence variants), the over-wing nacelle and the far-field part |
-| `cad/SMI-L2/` | CATIA V5 product and parts of the level-2 geometry (wing at 3 deg, tractor rear-mounted nacelle-pylon, WBPNVH) |
-| `ansa/components/` | ANSA meshes of the components: fuselage, the SMI nacelle with and without spinner, the minimal nacelle, and the pylon controls (0 and plus/minus 5 deg) |
-| `ansa/assemblies/` | ANSA meshes of assembled airframes without propeller (WB, WBPNH) |
-| `obj-power-off/` | Surface meshes (OBJ, triangles, metres) of 21 power-off configurations, one group per component: B, W, H, N, P, S |
-| `MANIFEST.json` | Every file with its size and sha256 |
+| `iges/SMI-Fuselage.igs` | The fuselage alone. |
+| `iges/SMI-L1-PN.igs` | The L1 nacelle with its spinner, and the nacelle without the trim, for isolated-nacelle runs. |
+| `iges/SMI-L2-PN.igs` | The L2 pylon and nacelle. |
+| `iges/SMI-L3-PN.igs` | The L3 pylon and nacelle. |
+| `iges/SMI-liftingsurfaces-nocap.igs` | The wing, the horizontal tail and the vertical tail, without the tip-cap lofting. |
+| `iges/SMI-WBVH.igs` | The geometry common to every SMI configuration. |
+| `MANIFEST.json` | Every file with its size and sha256. |
 
-Configuration names read as the components they contain: `B` fuselage, `W`
-wing, `H` horizontal tail, `P` pylon, `N` nacelle (with spinner `S` where
-present); `PYL0`, `PYLp5`, `PYLn5` the pylon at 0, +5 and -5 deg; `IH0`,
-`IHp2`, `IHn2` the tail incidence at 0, +2 and -2 deg.
+Every component is whole: no spare part was deleted, so intermediate
+geometries can be built from these surfaces.
 
-## Coordinate system
+## Units and axes
 
-Metres. x positive aft, y positive to starboard, z positive up (the frame the
-meshes were saved in). The fuselage is 20.0 m long.
+Millimetres. IGES y runs along the fuselage (0 at the nose, 20 000 at the
+tail), IGES z is spanwise, IGES x is vertical. (A mesh built in the usual
+aerodynamic frame, x aft, y spanwise, z up, maps as x = IGES y, y = IGES z,
+z = IGES x.)
 
 ## Adding a propeller
 
-The propeller is NOT part of this record. Any propeller can be installed on the
-SMI nacelle as follows (values measured on the OBJ meshes, identical in every
-configuration that carries the nacelle):
+The propeller is NOT part of this release. For the L2 installation, the values
+below can be read from `SMI-L2-PN.igs` itself (its surfaces start at
+IGES y = 13 886.0 mm, the spinner tip):
 
-- Rotation axis: parallel to x, through y = -3.504 m, z = 1.840 m.
-- Spinner (group `S`): tip at x = 13.886 m, base at x = 14.983 m; base radius
-  0.3656 m. The hub of the propeller is centred on the spinner axis; the blade
-  roots attach on the spinner surface.
+- Rotation axis: parallel to IGES y, through IGES x = 1 840 mm, z = -3 504 mm.
+- Spinner: tip at IGES y = 13 886 mm, base at IGES y = 14 983 mm, base radius
+  365.6 mm. The hub is centred on the spinner axis; the blade roots attach on
+  the spinner surface.
 - Place the propeller disc on that axis at the axial station your propeller
   requires, scale it to the diameter of your study, and set its hand of
   rotation in your solver's rotor definition.
-- Mesh the blades with a surface resolution compatible with the spinner and
-  nacelle meshes (see the OBJ triangle sizes).
 
-The configurations studied by the author used the TU Delft XPROP propeller,
-which is available from its owners on request: TU Delft, "TUD-XPROP propeller
-geometry", Zenodo, https://doi.org/10.5281/zenodo.18598046. It is not
-redistributed here.
+For L1 and L3, take the axis from the spinner or nacelle of the corresponding
+file the same way. The configurations studied by the author used the TU Delft
+XPROP propeller, which is available from its owners on request: TU Delft,
+"TUD-XPROP propeller geometry", Zenodo, https://doi.org/10.5281/zenodo.18598046.
+It is not redistributed here.
 
 ## License and use
 
@@ -63,7 +60,7 @@ the files. Commercial use requires the author's written permission.
 
 ## How to cite
 
-Geovana Neves, "SMI v1.0.0: airframe geometry and surface meshes", Zenodo, 2026,
+Geovana Neves, "SMI v1.0.0: airframe geometry", Zenodo, 2026,
 doi: (assigned by Zenodo on publication).
 
 Related: Geovana Neves, *pyflightstream*, Zenodo,

@@ -1,0 +1,4 @@
+# The IGES files are published byte for byte (their sha256 is in MANIFEST.json):
+# git must never convert their line endings.
+*.igs binary
+*.iges binary
