@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this geometry, please cite it as below."
+title: "SMI: airframe geometry and surface meshes"
+version: 1.0.0
+type: dataset
+license: CC-BY-NC-4.0
+authors:
+  - family-names: Neves
+    given-names: Geovana
+    affiliation: "Instituto Tecnologico de Aeronautica (ITA)"
+repository-code: "https://github.com/nevesgeovana/smi"
+references:
+  - type: dataset
+    title: "TUD-XPROP propeller geometry"
+    authors:
+      - name: "Delft University of Technology"
+    doi: 10.5281/zenodo.18598046
+  - type: software
+    title: pyflightstream
+    authors:
+      - family-names: Neves
+        given-names: Geovana
+    doi: 10.5281/zenodo.21482924
