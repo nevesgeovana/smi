@@ -1,0 +1,297 @@
+# Method inputs: data maps, grids, plot spans, correction toggles. Paths are relative to this file.
+[paths]
+polars = "../data"
+
+[columns]  # file column to the name the framework uses
+VINF = "SPEED"
+SREF = "REF_AREA"
+CREF = "REF_LENGTH"
+
+[grids]
+alpha = {start = 0.0, stop = 8.01, step = 0.1, round = 1}  # angle of attack grid, degrees
+ih = {start = -30.0, stop = 15.01, step = 1.0, round = 1}       # wide enough for every trim point; local interpolation
+n_order = [1.0, 0.0, 0.25, 0.5, 0.75, 1.25, 1.5, 1.75, 2.0]  # load factors of the build-up
+j_prop = {start = 0.8, stop = 2.3, step = 0.005, round = 4}  # advance ratio grid of the propeller maps
+blade_map = {start = 30.0, stop = 45.01, step = 0.01, round = 3}  # blade angle grid of the propeller maps, degrees
+tca_map = {start = 0.001, stop = 0.21, step = 0.001, round = 4}  # thrust loading grid of the propeller maps
+vvs = {start = 1.2, stop = 2.01, step = 0.1, round = 2}  # speed ratio V/Vs grid of the sizing table
+lfactor = {start = 0.0, stop = 2.01, step = 0.05, round = 2}  # load factor grid of the sizing table
+cg = {start = 0.1, stop = 0.35, step = 0.025, round = 3}  # CG position grid of the sizing table, fraction of MAC
+cg_plot = {start = 0.1, stop = 0.6, step = 0.01, round = 2}  # CG position grid of the plots, fraction of MAC
+
+[map_settings]
+j_fixed = 1.3  # advance ratio of the fixed-J selection
+fixed_blade = 35.0  # blade angle of the fixed-blade selection, degrees
+blades_fixed_j = [30.0, 35.0, 40.0, 45.0]  # blade angles of the fixed-J selection, degrees
+ct_floor = 0.0  # lowest thrust coefficient kept on the maps
+j_max = 2.10  # highest advance ratio kept on the maps
+tc_min = 0.01  # lowest thrust loading kept on the maps
+eta_floor = 0.68  # lowest propulsive efficiency kept on the maps
+
+[blades]  # 0 power off, 99 no propeller and no pylon
+prop_on = [30, 35, 40, 45]
+power_off_ids = [0, 99]
+all = [0, 30, 35, 40, 45, 99]
+
+[polars.wing_on]  # per blade: wing and body (WB), with pylon and nacelle (WBPN), and with the trim surface
+wb = "3222"
+wbpn = {0 = "3255", 30 = "3266", 35 = "3268", 40 = "3269", 45 = "3267", 99 = "3222"}
+with_trim_surface = {0 = "3244", 30 = "3257", 35 = "3260", 40 = "3263", 45 = "3241", 99 = "3251"}
+
+[polars.wing_body_at_thrust]  # the wing and body load at each thrust, minus the wing-body alone; read when the toggle of that name is true; the extension in figures and tables
+base = "3222"
+runs = {0 = "3255", 30 = "3266", 35 = "3268", 40 = "3269", 45 = "3267"}
+
+[polars.wing_off]  # wing off: the body alone is the base
+base = "3247"
+
+[polars.isolated]  # J slice at j_fixed, alpha 0 and 4; ids 0 and 99 are the power-off file
+alpha_low = 0.0
+alpha_high = 4.0
+low = {0 = "0000_AoA0", 30 = "3303", 35 = "3309", 40 = "3310", 45 = "3311", 99 = "0000_AoA0"}
+high = {0 = "0000_AoA4", 30 = "3304", 35 = "3306", 40 = "3307", 45 = "3305", 99 = "0000_AoA4"}
+
+[polars.maps]  # propeller maps by blade angle
+aoa0 = {"30.0" = "3303", "32.5" = "3308", "35.0" = "3309", "37.5" = "3312", "40.0" = "3310", "42.5" = "3313", "45.0" = "3311"}
+aoa4 = {"30.0" = "3304", "32.5" = "3314", "35.0" = "3306", "37.5" = "3315", "40.0" = "3307", "42.5" = "3316", "45.0" = "3305"}
+
+# Reduction blocks: a surface and its polars. Neves et al. 2026, Eqs. (9) to (12).
+[reduction.tail]  # controls in degrees; id 99 is WBH, tail-off WB
+surface = "tail"
+wing_off_base = "3247"
+wing_off = {"-2" = "3249", "0" = "3248", "2" = "3250"}
+tail_off = {0 = "3255", 30 = "3266", 35 = "3268", 40 = "3269", 45 = "3267", 99 = "3222"}
+wing_on = {0 = {"-2" = "3245", "0" = "3244", "2" = "3246"}, 30 = {"-2" = "3258", "0" = "3257", "2" = "3259"}, 35 = {"-2" = "3261", "0" = "3260", "2" = "3262"}, 40 = {"-2" = "3264", "0" = "3263", "2" = "3265"}, 45 = {"-2" = "3242", "0" = "3241", "2" = "3243"}, 99 = {"-2" = "3252", "0" = "3251", "2" = "3253"}}
+
+[reduction.pylon]  # WBPNX
+surface = "pylon"
+wing_off_base = "3247"
+wing_off = {"-5" = "3282", "0" = "3254", "5" = "3281"}
+tail_off = {0 = "3222", 30 = "3222", 35 = "3222", 40 = "3222", 45 = "3222"}
+wing_on = {0 = {"-5" = "3286", "0" = "3255", "5" = "3285"}, 30 = {"-5" = "3289", "0" = "3266", "5" = "3290"}, 35 = {"-5" = "3293", "0" = "3268", "5" = "3294"}, 40 = {"-5" = "3295", "0" = "3269", "5" = "3296"}, 45 = {"-5" = "3291", "0" = "3267", "5" = "3292"}}
+
+[reduction.pylon_isolated]  # BPNX; Figs. 14 and 15
+surface = "pylon"
+wing_off_base = "3247"
+wing_off = {"-5" = "3282", "0" = "3254", "5" = "3281"}
+tail_off = {30 = "3247", 35 = "3247", 40 = "3247", 45 = "3247"}
+wing_on = {30 = {"-5" = "3288", "0" = "3270", "5" = "3287"}, 35 = {"-5" = "3300", "0" = "3273", "5" = "3299"}, 40 = {"-5" = "3302", "0" = "3272", "5" = "3301"}, 45 = {"-5" = "3298", "0" = "3271", "5" = "3297"}}
+
+[reduction.settings]  # tolerance, iteration limit and start values of the reduction
+tol = 1e-6
+maxiter = 1000
+eps0_slope = 0.3
+eps0_offset = 1.0
+
+# Setup-bias cases (numerics section). bias_* scale the measured bias: 1 the full bias, 0 none (bias_kq scales the velocity error; the pressure correction is its square). The deficit of each bias is read from the measured ratios of setup_bias.toml.
+# Choices: the larger of the two measured deficits at every blade; the swirl bias was measured at zero incidence: it divides the EPS increment over power off at alpha 0 by (1 - s d_a) and shifts the curve by that constant, the slope with alpha as simulated; the dynamic pressure bias is an axial velocity deficit, its increment divided by (1 - s d_q)^2.
+[cases.REFERENCE]
+id = 0
+[cases.BIAS_NONE]
+id = 1
+bias_inplane = 0.0
+bias_kq = 0.0
+bias_eps = 0.0
+[cases.BIAS_INPLANE]
+id = 2
+bias_inplane = 1.0
+[cases.BIAS_KQ]
+id = 3
+bias_kq = 1.0
+[cases.BIAS_SWIRL]
+id = 4
+bias_eps = 1.0
+[cases.BIAS_ALL]
+id = 5
+bias_inplane = 1.0
+bias_kq = 1.0
+bias_eps = 1.0
+
+[sizing]  # trim and sizing lines of the scissor
+panel = "Fig21_b"
+labels = ["REFERENCE", "BIAS_NONE", "BIAS_INPLANE", "BIAS_KQ", "BIAS_SWIRL", "BIAS_ALL"]  # names of the cases in the figures
+forward_limit = ["pull", "pull", "pull", "pull", "pull", "pull"]  # line that sets the forward limit of each case
+aft_limit = ["dn", "dn", "dn", "dn", "dn", "dn"]  # line that sets the aft limit of each case
+fit = []                                       # each line as solved, on its own case
+copy = []
+k_tail = [0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4]  # holds the factors of the 15 to 30 percent ranges
+cases = ["REFERENCE", "BIAS_NONE", "BIAS_INPLANE", "BIAS_KQ", "BIAS_SWIRL", "BIAS_ALL"]
+tca_on = 0.30154
+tca_off = 0.0
+mass_kg = 10000            # reference mass
+rho = 1.225                # sea level; the rate term of a maneuver flies at V = (V/Vs) Vs from these, the polars stay at the speed of their runs
+cl_max = 1.5
+cg_ref = 0.25
+cg_offset = 0.20
+pitch_up = {lfactor = 1.0, vvs = 1.2, ih = -8.5}  # the lowest speed of the trim, flap 0
+pitch_dn = {lfactor = 1.0, vvs = 2.0, ih = 2.5}
+pull_up = {lfactor = 2.5, vvs = 1.58114, delev = -22.0}  # V/Vs = sqrt(n), the most demanding point, rounded up so that the lift stays at CLmax
+elevator_effectiveness = 0.5
+solve_alpha = {start = -10.0, stop = 16.01, step = 0.5, round = 1}  # with trim_at_required_lift: the angle grid of the solve
+solve_cg = {start = -0.6, stop = 1.6001, step = 0.002, round = 4}
+cg_range_target = [0.15, 0.20, 0.25, 0.30]  # CG ranges at which the area factor is read, fraction of MAC
+
+[spans]  # y axis span for the percent column: the span of the figure where set, else null and the CSV range is used
+Fig12_b = false
+Fig13_a = 0.7  # ylim 1 to 1.7
+Fig13_b = 4.0  # ylim 2 to 6
+Fig18_a = 3.0  # ylim -0.5 to 2.5
+Fig18_b = 1.15
+Fig18_c = 0.01
+Fig19_a = 16.0  # ylim -8 to 8
+Fig19_c = 0.25  # ylim -0.1 to 0.15
+
+[corrections]  # the journal run reads these
+alpha_units = true  # true: the angle is converted to radians with pi/180; false: the factor pi*180 of the first version
+thrust_rotation_sign = true  # true: corrected signs of the thrust rotation; false: the signs of the first version
+inplane_moment_coefficient = true  # true: the in-plane moment coefficient of one propeller, in metres; false: the first version
+thrust_moment_n_propellers = true  # true: the thrust moment of the third series of Fig. 20(c) counts every propeller; false: one propeller
+trim_straight_line = false  # false: trim on the end segment outside the swept incidences; true: one straight line through all
+wing_body_at_thrust = true         # true: every case carries the wing and body delta CL at its thrust, [polars.wing_body_at_thrust], except the two that say otherwise below
+wing_body_from_run = true          # the term is the run lift minus the method's lift, from three-dimensional coefficients; [polars.wing_body_at_thrust] holds the family integration, which only shows the term is physical (Fig. 4)
+wing_body_drag = false             # with wing_body_at_thrust: true carries its C_D; false leaves it out
+wing_body_moment = false           # with wing_body_at_thrust: true carries its moment too; false its C_L and C_D only
+smooth_inputs = true               # every input of the build-up against alpha, after the reductions: quadratic least-squares fit over the swept alpha, tangent lines outside
+trim_at_required_lift = true  # sizing lines solved at their lift on the wide incidence grid, local interpolation; false: the table of load factor and speed ratio
+critical_condition = true  # false: a fixed choice of line per case; true: the truly critical line per area factor and case
+
+# Which series and panels this case writes. Labels are those of the figures.
+[series]
+linear = []
+
+[panels.downwash]  # downwash at the trim surface and its increment against power off
+alpha = "Fig18_a"
+at_zero = "Fig18_b"
+slope = "Fig18_c"
+at_zero_label = "Downwash increment"
+slope_label = "Downwash increment derivative"
+power_off = 0
+labels = {0 = "WBPNVH", 30 = "beta = 30 deg", 35 = "beta = 35 deg", 40 = "beta = 40 deg", 45 = "beta = 45 deg", 99 = "WBVH"}
+thrust_polars = {0 = "3229", 30 = "3257", 35 = "3260", 40 = "3263", 45 = "3241", 99 = "3251"}
+
+[panels.slipstream]  # slipstream angle and dynamic pressure at the pylon
+reduction = "pylon_isolated"
+angle = "Fig14_a"
+angle_zero = "Fig14_b"
+angle_slope = "Fig14_c"
+q = "Fig15_a"
+q_zero = "Fig15_b"
+blade_label = "beta = %d deg"
+installed_label = "Installed Propeller"
+thrust_polars = {30 = "3270", 35 = "3273", 40 = "3272", 45 = "3271"}
+
+[panels.maps]  # selected points of the propeller maps
+series = [["Fig12_b", "aoa4", "INPLANE"], ["Fig13_a", "aoa0", "KQDYNx1p00R_L"], ["Fig13_b", "aoa0", "SWIRLx1p00R_R"]]
+isolated_panel = "Fig14_b"
+isolated_label = "Isolated Propeller"
+isolated_map = "aoa0"
+isolated_point = "Fixed J"
+isolated_var = "SWIRLx1p00R_R"
+
+[panels.inflow]  # installed force and propeller angle
+force = "Fig16_a"
+angle = "Fig16_b"
+slope_panel = "Fig17_a"
+zero_panel = "Fig17_b"
+slope_label = "derivative"
+zero_label = "at zero"
+shown_blade = 45
+fit_configuration = "WBPNX"
+isolated_label = "X"
+configurations = {WBPNX = {30 = "3266", 35 = "3268", 40 = "3269", 45 = "3267"}, BPNX = {30 = "3270", 35 = "3273", 40 = "3272", 45 = "3271"}, NX = {30 = "3317", 35 = "3318", 40 = "3319", 45 = "3320"}}
+
+
+[polar_folders]
+WB = ["3222"]
+WBPN = ["3255", "3285", "3286"]
+WBPNVH = ["3229", "3244", "3245", "3246"]
+WBPNVHX = ["3241", "3242", "3243", "3257", "3258", "3259", "3260", "3261", "3262", "3263", "3264", "3265"]
+WBPNX = ["3266", "3267", "3268", "3269", "3289", "3290", "3291", "3292", "3293", "3294", "3295", "3296"]
+WBVH = ["3251", "3252", "3253"]
+B = ["3247"]
+BVH = ["3248", "3249", "3250"]
+BPN = ["3254", "3281", "3282"]
+BPNX = ["3270", "3271", "3272", "3273", "3287", "3288", "3297", "3298", "3299", "3300", "3301", "3302"]
+NX = ["3317", "3318", "3319", "3320"]
+X = ["0000_AoA0", "0000_AoA4", "3303", "3304", "3305", "3306", "3307", "3308", "3309", "3310", "3311", "3312", "3313", "3314", "3315", "3316"]
+
+# The scissor from a kriging surface of the build-up; fitted by smi_framework.response_surface (needs the optional smt package).
+[response_surface]
+response_surface = false
+k_start = 0.7  # below the smallest area factor of the sizing, for the smallest CG range
+k_stop = 1.5       # covers the CG range of 0.30 in Fig. 21(b) without extrapolating in k
+k_step = 0.1
+train_points = 1200
+held_points = 4000
+seed = 20261103
+corr = "matern52"  # the tables are piecewise linear, so a rough correlation
+poly = "quadratic"
+nugget = 0.0       # 0 keeps the default of smt
+eval_noise = false # no smoothing
+n_start = 10
+band_draws = 12
+solve_alpha = [-2.0, 14.0, 0.25]
+solve_ih = [-30.0, 5.0, 1.0]
+solve_cg = [-0.6, 1.2, 0.05]
+band_calibration = true  # scales the kriging deviation so the two-sigma band holds 95.4 percent of half the held points; the other half reports the coverage
+direct_journal = "journal"
+[extrapolated_db]  # the database the kriging trains on; built by smi_framework.build_up.extrapolated_database
+extrapolate = true # false keeps alpha and IH inside the data ranges below
+rule = "last_interval"  # past the data each polar is the straight line through its last interval; the author's premise for the maneuvers, smi_framework.build_up.extrapolated_database
+alpha = {start = -2.0, stop = 14.01, step = 0.5, round = 1}  # holds every trim point of the maneuvers; step 0.5
+ih = {start = -30.0, stop = 5.1, step = 1.0, round = 1}      # holds every trim point of the maneuvers
+lfactor = [1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5]             # 2.5 is the pull-up
+data_alpha = [0.0, 8.0]       # swept polars at 0, 2, 4, 8 deg, the folders of data/
+data_ih = [-5.0, 5.0]  # tail incidences of the data, degrees
+data_tail_local = [0.0, 8.0]  # the tail polar comes from the wing-off sweep, polars 3247 and 3248
+
+[matrix]  # solver identification of the runs
+# Solver build of the polars: FlightStream 26.100 denotes build 2122026, February 2026 manual edition; the date is read from the build number as M DD YYYY.
+solver_build = "FlightStream 26.100, build 2122026 (February 12, 2026)"
+installation = "Installation: every run here is SMI-L2, the rear-mounted tractor of that paper (L1 is wing-mounted, L3 the pusher)."
+
+[monte_carlo]  # premises of the Monte Carlo on the setup biases; sampled by smi_framework.monte_carlo
+samples = 100000  # number of sampled sets of the three bias scales
+seed = 20261104  # seed of the random generator, so a run is reproducible
+tolerance = 0.005  # a first-order response that misses a direct solve by more than this (CG, fraction of MAC) gets second-order terms
+rank_correlation = 0.5  # rank correlation between the dynamic pressure scale and the swirl scale; the in-plane scale is independent
+mark_at = 0.25  # CG range at which the paper reads the required area factor
+scale_low = 0.0  # lowest value of each bias scale (triangular distribution)
+scale_peak = 0.0  # most likely value of each bias scale
+scale_high = 1.0  # highest value of each bias scale
+levels = [2.5, 16, 50, 84, 97.5]  # percent levels of the reported quantiles (bias_monte_carlo.py); the 95 percent interval is the first and last
+
+[monte_carlo.points]  # direct bias cases and the scale each applies to (in-plane, dynamic pressure, swirl); bias_monte_carlo.py
+BIAS_INPLANE = [1, 0, 0]
+BIAS_KQ = [0, 1, 0]
+BIAS_SWIRL = [0, 0, 1]
+BIAS_ALL = [1, 1, 1]
+BIAS_IN_H = [0.5, 0, 0]
+BIAS_KQ_H = [0, 0.5, 0]
+BIAS_SWIRL_H = [0, 0, 0.5]
+BIAS_ALL_H = [0.5, 0.5, 0.5]
+BIAS_IN_KQ = [1, 1, 0]
+BIAS_IN_SWIRL = [1, 0, 1]
+BIAS_KQ_SWIRL = [0, 1, 1]
+BIAS_KQ_Q = [0, 0.25, 0]
+BIAS_KQ_T = [0, 0.75, 0]
+BIAS_KQ_SWIRL_H = [0, 0.5, 0.5]
+BIAS_SW_Q = [0, 0, 0.25]
+BIAS_SW_T = [0, 0, 0.75]
+
+[[monte_carlo.scenarios]]  # name, peak of the triangular distribution and rank correlation between dynamic pressure and swirl
+name = "peak0_rho0.5"
+peak = 0.0
+rank_correlation = 0.5
+[[monte_carlo.scenarios]]
+name = "peak1_rho0.5"
+peak = 1.0
+rank_correlation = 0.5
+[[monte_carlo.scenarios]]
+name = "peak0_rho0"
+peak = 0.0
+rank_correlation = 0.0
+[[monte_carlo.scenarios]]
+name = "peak0_rho1"
+peak = 0.0
+rank_correlation = 1.0

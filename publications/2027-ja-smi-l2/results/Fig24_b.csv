@@ -1,0 +1,13 @@
+series,x,y,x_label,y_label
+Downwash at HT,0.112759,-0.009255,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Downwash at HT,0.268612,0.415845,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Downwash at HT,0.420727,0.800426,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Downwash at HT,0.563498,1.123861,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+In-plane Force,0.112759,3.646638,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+In-plane Force,0.268612,4.397072,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+In-plane Force,0.420727,5.135780,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+In-plane Force,0.563498,5.962429,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Slipstream at Pylon,0.112759,0.374121,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Slipstream at Pylon,0.268612,2.821577,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Slipstream at Pylon,0.420727,5.535694,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Slipstream at Pylon,0.563498,8.214966,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]

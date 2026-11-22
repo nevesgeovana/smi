@@ -1,14 +1,18 @@
-SMI v1.0.0: airframe geometry
+SMI Framework: geometry, data and documents
 Copyright (c) 2026 Geovana Neves
 
-This work is licensed under the Creative Commons Attribution-NonCommercial 4.0
-International License (CC BY-NC 4.0). To view a copy of this license, visit
+The geometry (geometry/), the data and inputs (publications/) and the documents (method/method_deck.pdf and
+the Markdown files) of this work, except the Python files, are licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). To view a copy of this license, visit
 https://creativecommons.org/licenses/by-nc/4.0/ ; the legal code is at
 https://creativecommons.org/licenses/by-nc/4.0/legalcode .
 
-Attribution: "Geovana Neves, SMI v1.0.0: airframe geometry",
+Attribution: "Geovana Neves, SMI Framework",
 with a link to this repository or its Zenodo record. Commercial use requires the
 author's written permission.
+
+The code, that is every Python file of the repository (method/smi_framework/), is licensed under the
+MIT License; see LICENSE-CODE.
 
 No propeller blade is included. The TU Delft XPROP propeller referenced in the
 README is not part of this work and is not covered by this license.

@@ -1,0 +1,9 @@
+series,x,y,x_label,y_label
+Propeller Effects,0.112759,1.158714,"Thrust loading coefficient, T_C [-]",Static margin increment [% of MAC]
+Propeller Effects,0.268612,1.470670,"Thrust loading coefficient, T_C [-]",Static margin increment [% of MAC]
+Propeller Effects,0.420727,1.967741,"Thrust loading coefficient, T_C [-]",Static margin increment [% of MAC]
+Propeller Effects,0.563498,2.310063,"Thrust loading coefficient, T_C [-]",Static margin increment [% of MAC]
+Propeller Effects + Pylon,0.112759,21.589845,"Thrust loading coefficient, T_C [-]",Static margin increment [% of MAC]
+Propeller Effects + Pylon,0.268612,21.726047,"Thrust loading coefficient, T_C [-]",Static margin increment [% of MAC]
+Propeller Effects + Pylon,0.420727,22.041583,"Thrust loading coefficient, T_C [-]",Static margin increment [% of MAC]
+Propeller Effects + Pylon,0.563498,22.216232,"Thrust loading coefficient, T_C [-]",Static margin increment [% of MAC]

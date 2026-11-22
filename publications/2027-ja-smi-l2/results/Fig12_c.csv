@@ -1,0 +1,13 @@
+series,x,y,x_label,y_label
+Fixed J,0.090544,3.216630,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Fixed J,0.242722,4.090460,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Fixed J,0.390686,4.934170,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Fixed J,0.530852,5.689490,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Fixed Blade,0.090544,3.116456,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Fixed Blade,0.242722,4.090460,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Fixed Blade,0.390686,4.795009,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Fixed Blade,0.530852,5.146361,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Best eta,0.090544,2.730898,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Best eta,0.242722,4.090543,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Best eta,0.390686,4.485849,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]
+Best eta,0.530852,4.801870,"Thrust loading coefficient, T_C [-]",Average swirl angle at x = R [deg]

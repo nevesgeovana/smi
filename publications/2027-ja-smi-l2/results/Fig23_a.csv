@@ -1,0 +1,5 @@
+series,x,y,x_label,y_label
+Downwash increment,0.112769,0.006334,"Thrust loading coefficient, T_C [-]","Downwash increment at alpha_inf = 0, d_epsilon [deg]"
+Downwash increment,0.268604,-0.353429,"Thrust loading coefficient, T_C [-]","Downwash increment at alpha_inf = 0, d_epsilon [deg]"
+Downwash increment,0.420734,-0.711674,"Thrust loading coefficient, T_C [-]","Downwash increment at alpha_inf = 0, d_epsilon [deg]"
+Downwash increment,0.563515,-1.043718,"Thrust loading coefficient, T_C [-]","Downwash increment at alpha_inf = 0, d_epsilon [deg]"

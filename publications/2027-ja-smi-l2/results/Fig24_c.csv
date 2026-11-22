@@ -1,0 +1,13 @@
+series,x,y,x_label,y_label
+Downwash at HT,0.112759,0.000465,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Downwash at HT,0.268612,-0.024443,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Downwash at HT,0.420727,-0.049089,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Downwash at HT,0.563498,-0.072017,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+In-plane Force,0.112759,0.012692,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+In-plane Force,0.268612,0.012129,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+In-plane Force,0.420727,0.010620,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+In-plane Force,0.563498,0.010206,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Slipstream at Pylon,0.112759,0.075331,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Slipstream at Pylon,0.268612,0.089295,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Slipstream at Pylon,0.420727,0.100247,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Slipstream at Pylon,0.563498,0.124350,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"

@@ -1,0 +1,13 @@
+series,x,y,x_label,y_label
+Propeller Effects,0.112759,0.088487,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects,0.268612,0.076981,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects,0.420727,0.061778,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects,0.563498,0.062539,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects + Thrust Moment,0.112759,0.044534,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects + Thrust Moment,0.268612,-0.027722,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects + Thrust Moment,0.420727,-0.102220,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects + Thrust Moment,0.563498,-0.157110,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects + Pylon,0.112759,0.150034,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects + Pylon,0.268612,0.138528,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects + Pylon,0.420727,0.123325,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"
+Propeller Effects + Pylon,0.563498,0.124086,"Thrust loading coefficient, T_C [-]","Pitching moment coefficient increment at alpha_inf = 0, d_C_M [-]"

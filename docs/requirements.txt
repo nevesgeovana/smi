@@ -1,0 +1,8 @@
+properdocs>=1.6,<2
+mkdocs-material>=9,<10
+mkdocstrings[python]>=0.26
+pillow
+cairosvg
+numpy
+scipy
+matplotlib

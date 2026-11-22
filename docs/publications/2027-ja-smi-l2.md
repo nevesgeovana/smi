@@ -1,0 +1,1 @@
+--8<-- "publications/2027-ja-smi-l2/paper-info.md"

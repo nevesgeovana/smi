@@ -1,0 +1,41 @@
+# Aircraft inputs: SMI-L2, SI units, angles in degrees.
+
+trim_surface = "tail"   # the surface whose incidence trims
+
+[reference]
+sref = 50.0  # reference area, m2
+cref = 2.526  # mean aerodynamic chord, m
+xmom = 9.152  # x of the moment reference, m
+prop_xpos = 14.76344  # x of the propeller plane, m
+rprop = 1.8288  # propeller radius, m
+gravity = 9.80665  # m/s2
+n_propellers = 2  # number of propellers
+tc_area_factor = 0.5  # thrust loading TC = 0.5 TCA Sref / D^2 with D the propeller diameter
+
+[arms]
+x = 5.6033             # x(propeller plane) - x(wing 25% MAC), geometry
+z = 1.84  # vertical arm of the propeller thrust, m
+
+[surfaces.tail]
+SrefHT = 11.5759  # horizontal tail area, m2
+CrefWing = 2.526
+XrefWing = 8.529
+XrefHT = 19.1159       # XrefWing + 10.5869, x(HT 25% MAC) - x(wing 25% MAC), geometry
+ZrefWing = 0.0
+ZrefHT = 5.422
+iHT = 0.0
+kq_limits = [1.0, 1.0] # the dynamic pressure ratio of this surface is held at 1
+absent_for = []
+wing_off_with_surface = "3248"  # body with the horizontal tail
+
+[surfaces.pylon]
+SrefHT = 10.9928184  # pylon area, m2
+CrefWing = 2.526
+XrefWing = 8.529
+XrefHT = 15.7373       # XrefWing + 7.2083, x(exposed pylon 25% MAC) - x(wing 25% MAC), geometry
+ZrefWing = 0.0
+ZrefHT = 1.6639
+iHT = 0.0
+kq_limits = [1.0, inf]  # the dynamic pressure ratio of this surface does not go below 1
+absent_for = [99]  # blade 99 (no pylon) builds without the pylon
+wing_off_with_surface = "3254"  # body with pylon and nacelle

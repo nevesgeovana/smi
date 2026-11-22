@@ -1,0 +1,16 @@
+# Measured setup biases of the numerics section, read by the bias cases of the paper.
+# Written from the study files, not typed. The deficit used is 1 minus the smallest ratio of the two blade angles.
+
+[inplane]
+# In-plane gradient of the full-wheel decomposition over the tunnel one, at J = 1.3: 1 + percent difference / 100.
+slope_ratio = 1.2202397697165983
+
+[dynamic_pressure]
+# Dynamic pressure bias: 1 minus the measured axial velocity deficit, per blade angle.
+beta30 = 0.806
+beta45 = 0.827
+
+[swirl]
+# Swirl angle bias: 1 minus the measured swirl angle deficit, per blade angle.
+beta30 = 0.7969999999999999
+beta45 = 0.775

@@ -1,0 +1,13 @@
+series,x,y,x_label,y_label
+Fixed J,0.090544,1.096350,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Fixed J,0.242722,1.251040,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Fixed J,0.390686,1.422250,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Fixed J,0.530852,1.606420,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Fixed Blade,0.090544,1.099355,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Fixed Blade,0.242722,1.251040,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Fixed Blade,0.390686,1.404368,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Fixed Blade,0.530852,1.536392,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Best eta,0.090544,1.107774,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Best eta,0.242722,1.251053,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Best eta,0.390686,1.371370,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]
+Best eta,0.530852,1.497924,"Thrust loading coefficient, T_C [-]",Average dynamic pressure ratio q/q_inf at x = R [-]

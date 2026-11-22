@@ -1,0 +1,1 @@
+--8<-- "method/README.md"

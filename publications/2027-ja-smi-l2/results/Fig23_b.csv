@@ -1,0 +1,5 @@
+series,x,y,x_label,y_label
+Downwash increment derivative,0.112769,0.013779,"Thrust loading coefficient, T_C [-]","Downwash increment derivative, d(d_epsilon)/dalpha_inf [-]"
+Downwash increment derivative,0.268604,0.011079,"Thrust loading coefficient, T_C [-]","Downwash increment derivative, d(d_epsilon)/dalpha_inf [-]"
+Downwash increment derivative,0.420734,0.008820,"Thrust loading coefficient, T_C [-]","Downwash increment derivative, d(d_epsilon)/dalpha_inf [-]"
+Downwash increment derivative,0.563515,0.007536,"Thrust loading coefficient, T_C [-]","Downwash increment derivative, d(d_epsilon)/dalpha_inf [-]"

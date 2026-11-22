@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smi-framework"
+version = "2.0.0"
+description = "Decomposition, build-up and sizing of the propeller-airframe interaction from solver polars, for the SMI configuration."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE-CODE"]
+authors = [{ name = "Geovana Neves" }]
+dependencies = ["numpy", "scipy", "matplotlib"]
+
+[project.optional-dependencies]
+response-surface = ["smt"]
+
+[tool.setuptools]
+package-dir = { "" = "method" }
+packages = ["smi_framework"]

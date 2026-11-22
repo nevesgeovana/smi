@@ -1,0 +1,10 @@
+series,x,y,x_label,y_label
+Installed Propeller,0.112757,1.029465,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"
+Installed Propeller,0.268544,1.109024,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"
+Installed Propeller,0.417763,1.191422,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"
+Installed Propeller,0.559361,1.279897,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"
+Isolated Propeller,0.00000,1.00157,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"
+Isolated Propeller,0.09055,1.09792,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"
+Isolated Propeller,0.24272,1.25261,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"
+Isolated Propeller,0.39069,1.42382,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"
+Isolated Propeller,0.53085,1.60799,"Thrust loading coefficient, T_C [-]","Dynamic pressure ratio at alpha_inf = 0, q/q_inf [-]"

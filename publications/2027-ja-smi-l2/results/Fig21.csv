@@ -1,0 +1,5 @@
+series,x,y,x_label,y_label
+at zero,0.112959,-1.819142,"Thrust loading coefficient, T_C [-]","Propeller angle of attack at alpha_inf = 0, alpha_PROP [deg]"
+at zero,0.268663,-1.415506,"Thrust loading coefficient, T_C [-]","Propeller angle of attack at alpha_inf = 0, alpha_PROP [deg]"
+at zero,0.420805,-1.045493,"Thrust loading coefficient, T_C [-]","Propeller angle of attack at alpha_inf = 0, alpha_PROP [deg]"
+at zero,0.563645,-0.864222,"Thrust loading coefficient, T_C [-]","Propeller angle of attack at alpha_inf = 0, alpha_PROP [deg]"

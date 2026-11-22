@@ -1,0 +1,5 @@
+series,x,y,x_label,y_label
+derivative,0.112959,0.903537,"Thrust loading coefficient, T_C [-]","Propeller angle of attack derivative, dalpha_PROP/dalpha_inf [-]"
+derivative,0.268663,0.916000,"Thrust loading coefficient, T_C [-]","Propeller angle of attack derivative, dalpha_PROP/dalpha_inf [-]"
+derivative,0.420805,0.931507,"Thrust loading coefficient, T_C [-]","Propeller angle of attack derivative, dalpha_PROP/dalpha_inf [-]"
+derivative,0.563645,0.942478,"Thrust loading coefficient, T_C [-]","Propeller angle of attack derivative, dalpha_PROP/dalpha_inf [-]"

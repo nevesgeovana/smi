@@ -1,4 +1,6 @@
-# The IGES files are published byte for byte (their sha256 is in MANIFEST.json):
-# git must never convert their line endings.
+# The IGES files are published byte for byte: git must never convert their line endings.
 *.igs binary
 *.iges binary
+
+# PDF cross-reference offsets require byte-preserving checkouts.
+*.pdf binary

@@ -1,9 +1,20 @@
 cff-version: 1.2.0
-message: "If you use this geometry, please cite it as below."
-title: "SMI: airframe geometry"
-version: 1.0.0
+message: "If you use this repository, please cite it as below."
+title: "SMI Framework"
+version: 2.0.0
+date-released: 2026-11-22
+doi: 10.5281/zenodo.23025104
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23025104
+    description: "All versions (concept DOI)"
+  - type: doi
+    value: 10.5281/zenodo.23025105
+    description: "Version 1.0.0"
 type: dataset
-license: CC-BY-NC-4.0
+license:
+  - MIT
+  - CC-BY-NC-4.0
 authors:
   - family-names: Neves
     given-names: Geovana

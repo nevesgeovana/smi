@@ -1,68 +1,64 @@
-# SMI v1.0.0: airframe geometry
+# SMI Framework
 
-Copyright (c) 2026 Geovana Neves. Licensed under the Creative Commons
-Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0); see `LICENSE`.
+<!-- --8<-- [start:intro] -->
+SMI, the Standard Model ITA, is an interchangeable-component research configuration for the study of
+propeller-airframe integration: a common airframe (wing, body, vertical and horizontal tail) and three
+pylon-nacelle installations, L1, L2 and L3. This repository holds the geometry, the method that turns solver
+polars into the decomposition, stability and sizing data of a study, and the data of the papers that used it.
+No propeller blade of any kind is included.
+<!-- --8<-- [end:intro] -->
 
-SMI is an interchangeable-component research configuration for the study of
-propeller-airframe integration: a common airframe (wing, body, vertical and
-horizontal tail) and three pylon-nacelle installations, L1, L2 and L3. This
-release holds the AIRFRAME ONLY, as IGES surfaces. No propeller blade of any
-kind is included; section "Adding a propeller" says how to install one.
+Copyright (c) 2026 Geovana Neves. The geometry, data and documents are licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0); see `LICENSE`. The code, every Python
+file of the repository, is licensed under the MIT License; see `LICENSE-CODE`.
+
+Documentation site: https://nevesgeovana.github.io/smi/
 
 ## Contents
 
-| File | What it holds |
+| Folder | What it holds |
 |---|---|
-| `iges/SMI-Fuselage.igs` | The fuselage alone. |
-| `iges/SMI-L1-PN.igs` | The L1 nacelle with its spinner, and the nacelle without the trim, for isolated-nacelle runs. |
-| `iges/SMI-L2-PN.igs` | The L2 pylon and nacelle. |
-| `iges/SMI-L3-PN.igs` | The L3 pylon and nacelle. |
-| `iges/SMI-liftingsurfaces-nocap.igs` | The wing, the horizontal tail and the vertical tail, without the tip-cap lofting. |
-| `iges/SMI-WBVH.igs` | The geometry common to every SMI configuration. |
-| `MANIFEST.json` | Every file with its size and sha256. |
+| `geometry/` | The SMI geometry as IGES surfaces, by generation, with `GEOMETRY_LOG.md`: what each file holds, axes, reference dimensions and history. |
+| `method/` | The method: the Python package `smi_framework` and `method_deck.pdf`, which explains each step. |
+| `publications/` | One folder per paper: `paper-info.md`, the `inputs` of the method, the solver polars in `data`, and one CSV per plotted figure in `results`. |
 
-Every component is whole: no spare part was deleted, so intermediate
-geometries can be built from these surfaces.
+## Install
 
-## Units and axes
+<!-- --8<-- [start:install] -->
+Needs Python 3.11 or later. From the root of this repository:
 
-Millimetres. IGES y runs along the fuselage (0 at the nose, 20 000 at the
-tail), IGES z is spanwise, IGES x is vertical. (A mesh built in the usual
-aerodynamic frame, x aft, y spanwise, z up, maps as x = IGES y, y = IGES z,
-z = IGES x.)
+    python -m venv .venv
+    python -m pip install .
 
-## Adding a propeller
+Check with `python -c "import smi_framework"`. The kriging response surface also needs `smt`:
+`python -m pip install ".[response-surface]"`.
+<!-- --8<-- [end:install] -->
 
-The propeller is NOT part of this release. For the L2 installation, the values
-below can be read from `SMI-L2-PN.igs` itself (its surfaces start at
-IGES y = 13 886.0 mm, the spinner tip):
+## Geometry
 
-- Rotation axis: parallel to IGES y, through IGES x = 1 840 mm, z = -3 504 mm.
-- Spinner: tip at IGES y = 13 886 mm, base at IGES y = 14 983 mm, base radius
-  365.6 mm. The hub is centred on the spinner axis; the blade roots attach on
-  the spinner surface.
-- Place the propeller disc on that axis at the axial station your propeller
-  requires, scale it to the diameter of your study, and set its hand of
-  rotation in your solver's rotor definition.
-
-For L1 and L3, take the axis from the spinner or nacelle of the corresponding
-file the same way. The configurations studied by the author used the TU Delft
-XPROP propeller, which is available from its owners on request: TU Delft,
-"TUD-XPROP propeller geometry", Zenodo, https://doi.org/10.5281/zenodo.18598046.
+IGES files in millimetres, x axial (positive aft), y spanwise, z up. See `geometry/GEOMETRY_LOG.md`.
+The studies used the TU Delft XPROP propeller, which is available from its owners on request:
+TU Delft, "TUD-XPROP propeller geometry", Zenodo, https://doi.org/10.5281/zenodo.18598046.
 It is not redistributed here.
+
+## Publications
+
+`publications/2027-ja-smi-l2/`: Journal of Aircraft paper on the SMI-L2 configuration (under preparation).
+Its `paper-info.md` states the geometry version, the software, the folder contents and how to reproduce.
 
 ## License and use
 
-CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/). You may share and
-adapt this geometry for NON-COMMERCIAL purposes, provided you credit the author,
-Geovana Neves, cite this record, link to the license and say whether you changed
-the files. Commercial use requires the author's written permission.
+Geometry, data and documents: CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/). You may share
+and adapt them for NON-COMMERCIAL purposes, provided you credit the author, Geovana Neves, cite this record,
+link to the license and say whether you changed the files. Commercial use requires the author's written
+permission. Code (`method/smi_framework/`): MIT License, see `LICENSE-CODE`.
 
 ## How to cite
 
-Geovana Neves, "SMI v1.0.0: airframe geometry", Zenodo, 2026,
-doi: (assigned by Zenodo on publication).
+<!-- --8<-- [start:cite] -->
+Geovana Neves, "SMI Framework", Zenodo, 2026, https://doi.org/10.5281/zenodo.23025104 (all versions).
+See `CITATION.cff`.
 
-Related: Geovana Neves, *pyflightstream*, Zenodo,
-https://doi.org/10.5281/zenodo.21482924 (the software used to run and post-process
-the configurations).
+Related: Geovana Neves, *pyflightstream*, Zenodo, https://doi.org/10.5281/zenodo.21482924 (the software used
+to run and post-process the configurations).
+<!-- --8<-- [end:cite] -->

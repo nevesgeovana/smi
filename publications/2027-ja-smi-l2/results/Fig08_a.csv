@@ -1,0 +1,12 @@
+series,x,y,x_label,y_label
+"beta = 30 deg, FTS",0.80001,0.27887,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 30 deg, FTS",0.90000,0.24509,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 30 deg, FTS",1.00000,0.20730,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 30 deg, FTS",1.10000,0.16650,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 30 deg, FTS",1.20000,0.12261,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 30 deg, FTS",1.30000,0.07652,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 45 deg, FTS",1.50000,0.34310,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 45 deg, FTS",1.70000,0.29407,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 45 deg, FTS",1.90000,0.22838,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 45 deg, FTS",2.10000,0.15603,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"
+"beta = 45 deg, FTS",2.30000,0.07980,"Advance ratio, J [-]","Thrust coefficient, C_T [-]"

@@ -1,0 +1,9 @@
+series,x,y,x_label,y_label
+Propeller Effects,0.112759,4.009357,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Propeller Effects,0.268612,7.660735,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Propeller Effects,0.420727,11.485155,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Propeller Effects,0.563498,15.366948,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Propeller Effects + Pylon,0.112759,36.049625,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Propeller Effects + Pylon,0.268612,39.701003,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Propeller Effects + Pylon,0.420727,43.525423,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]
+Propeller Effects + Pylon,0.563498,47.407216,"Thrust loading coefficient, T_C [-]",Pitch damping increment [% of total]

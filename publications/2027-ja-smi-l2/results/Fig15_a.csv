@@ -1,0 +1,9 @@
+series,x,y,x_label,y_label
+Installed Propeller,0.112757,1.592829,"Thrust loading coefficient, T_C [-]","Slipstream angle at alpha_inf = 0, s [deg]"
+Installed Propeller,0.268544,1.737468,"Thrust loading coefficient, T_C [-]","Slipstream angle at alpha_inf = 0, s [deg]"
+Installed Propeller,0.417763,1.992409,"Thrust loading coefficient, T_C [-]","Slipstream angle at alpha_inf = 0, s [deg]"
+Installed Propeller,0.559361,2.303593,"Thrust loading coefficient, T_C [-]","Slipstream angle at alpha_inf = 0, s [deg]"
+Isolated Propeller,0.090544,3.216630,"Thrust loading coefficient, T_C [-]","Slipstream angle at alpha_inf = 0, s [deg]"
+Isolated Propeller,0.242722,4.090460,"Thrust loading coefficient, T_C [-]","Slipstream angle at alpha_inf = 0, s [deg]"
+Isolated Propeller,0.390686,4.934170,"Thrust loading coefficient, T_C [-]","Slipstream angle at alpha_inf = 0, s [deg]"
+Isolated Propeller,0.530852,5.689490,"Thrust loading coefficient, T_C [-]","Slipstream angle at alpha_inf = 0, s [deg]"

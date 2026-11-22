@@ -1,0 +1,5 @@
+series,x,y,x_label,y_label
+Installed Propeller,0.112757,0.080011,"Thrust loading coefficient, T_C [-]","Slipstream angle derivative, ds/dalpha_inf [-]"
+Installed Propeller,0.268544,0.141817,"Thrust loading coefficient, T_C [-]","Slipstream angle derivative, ds/dalpha_inf [-]"
+Installed Propeller,0.417763,0.209649,"Thrust loading coefficient, T_C [-]","Slipstream angle derivative, ds/dalpha_inf [-]"
+Installed Propeller,0.559361,0.278859,"Thrust loading coefficient, T_C [-]","Slipstream angle derivative, ds/dalpha_inf [-]"

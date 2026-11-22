@@ -1,0 +1,13 @@
+series,x,y,x_label,y_label
+Fixed J,0.093716,-0.395970,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Fixed J,0.246308,-0.477179,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Fixed J,0.394130,-0.557582,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Fixed J,0.535030,-0.647254,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Fixed Blade,0.093716,-0.440346,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Fixed Blade,0.246308,-0.477179,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Fixed Blade,0.394130,-0.512743,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Fixed Blade,0.535030,-0.545710,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Best eta,0.093716,-0.516689,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Best eta,0.246308,-0.477178,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Best eta,0.394130,-0.463411,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"
+Best eta,0.535030,-0.494972,"Thrust loading coefficient, T_C [-]","Pitching moment slope increment from C_N, dC_M,alpha [1/rad]"

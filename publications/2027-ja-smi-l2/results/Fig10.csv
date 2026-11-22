@@ -1,0 +1,11 @@
+series,x,y,x_label,y_label
+"beta = 30 deg, Decomposition",0.8000,0.183196,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Decomposition",0.9000,0.214090,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Decomposition",1.0000,0.246956,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Decomposition",1.1000,0.283156,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Decomposition",1.3000,0.364072,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Validation",0.8000,0.176160,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Validation",0.9000,0.207484,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Validation",1.0000,0.236795,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Validation",1.1000,0.276668,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
+"beta = 30 deg, Validation",1.3000,0.350369,"Advance ratio, J [-]","In-plane force slope, C_N,alpha [1/rad]"
